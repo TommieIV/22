@@ -1,0 +1,27 @@
+os.loadAPI("gui")
+term.isColor(colors.gray)
+term.clear()
+function main()
+term.setBackgroundColor(colors.gray)
+term.clear()
+gui.gui.button.add("X", os.shutdown, 1,1,1,1,colors.black, colors.red)
+gui.gui.button.add("O", os.reboot, 5,1,1,1, colors.black, colors.blue)
+term.setCursorPos(9,1)
+print("Welcome")
+gui.gui.button.add("Apps",function() menua() end,5,3,1,3, colors.black, colors.green)
+gui.gui.button.add("MSG", function() shell.run("msg") end, 15,3,1,3, colors.black, colors.red)
+end
+main()
+
+function menua()
+term.setBackgroundColor(colors.gray)
+term.clear()
+gui.gui.button.add("X", os.shutdown, 1,1,1,1,colors.black, colors.red)
+gui.gui.button.add("O", os.reboot, 5,1,1,1, colors.black, colors.blue)
+gui.gui.button.add("<", function() main() end, 9,1,1,1,colors.black, colors.red)
+
+term.setCursorPos(1,5)
+print("No Apps")
+end
+
+gui.start()

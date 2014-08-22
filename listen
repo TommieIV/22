@@ -1,0 +1,8 @@
+while true do
+event, p1, p2, p3, p4 = os.pullEvent()
+print(event)
+print(p1)
+print(p2)
+print(p3)
+print(p4)
+end

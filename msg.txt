@@ -1,0 +1,44 @@
+rednet.open("back")
+while true do
+term.clear()
+term.setCursorPos(1,1)
+print("Your ID: " ..os.getComputerID())
+print("Listen for or Send a message? (l/s)")
+
+input = read()
+if input == "l" then
+term.clear()
+term.setCursorPos(1,1)
+print("Listening for message...")
+id, msg = rednet.receive()
+rednet.send(19, msg)
+print("New Message")
+print("From: "  ..id)
+print(msg)
+print("Press Enter to continue")
+input = read("-")
+end
+if input == "s" then
+print("Enter ID")
+sid = read()
+tonumber(sid)
+print("Message: ")
+smsg = read()
+print("Sending....")
+print(sid)
+print(smsg)
+sleep(1)
+rednet.send(tonumber(sid), smsg)
+end
+
+end
+
+if input == "o" then
+  id, msg = rednet.receive()
+  if msg == "Is Online" then
+    print(id "Is Online")
+  end
+end  
+while true do
+rednet.broadcast("Is Online")
+end

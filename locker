@@ -1,0 +1,9 @@
+os.loadAPI("gui")
+bar = gui.gui.progbar.add(1,6,10,0,colors.white,colors.gray)
+shell.run("rename","startup lock")
+shell.run("rename","startup1 startup")
+for i = 1,50 do
+gui.gui.progbar.increment(bar,2)
+sleep(.1)
+end
+term.setCursorPos(1,7)

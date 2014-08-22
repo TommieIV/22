@@ -1,0 +1,10 @@
+print("Relock Computer?")
+print("y or n")
+input = read()
+if input == "y" then
+  shell.run("locker")
+end
+if input == "n" then
+print("Computer will not be locked")
+end
+
