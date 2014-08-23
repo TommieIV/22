@@ -18,7 +18,7 @@ input = read("o")
 if input == "8544" then
 term.setBackgroundColor(colors.white)
 term.clear()
-p2 = gui.gui.progbar.add(2,1,49, 0,colors.black,colors.gray)
+p2 = gui.gui.progbar.add(1,1,51, 0,colors.black,colors.gray)
 gui.gui.progbar.increment(p2,10)
 sleep(.3)
 boot2 = paintutils.loadImage("boot2")
